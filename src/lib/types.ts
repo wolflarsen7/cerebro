@@ -1,5 +1,10 @@
 export type Severity = 'critical' | 'high' | 'medium' | 'low';
 
+export interface TimelineEvent {
+  year: number;
+  event: string;
+}
+
 export interface Conflict {
   id: string;
   name: string;
@@ -13,6 +18,7 @@ export interface Conflict {
   region: string;
   startYear: number;
   historyUrl: string;
+  timeline?: TimelineEvent[];
 }
 
 export interface NewsArticle {

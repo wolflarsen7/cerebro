@@ -17,6 +17,16 @@ export const NEWS_SOURCES: FeedSource[] = [
     url: 'https://feeds.npr.org/1004/rss.xml',
     category: 'intel',
   },
+  {
+    name: 'The Hill',
+    url: 'https://thehill.com/feed/',
+    category: 'intel',
+  },
+  {
+    name: 'AP News',
+    url: 'https://feedx.net/rss/ap.xml',
+    category: 'intel',
+  },
 
   // Financial
   {
@@ -46,6 +56,16 @@ export const NEWS_SOURCES: FeedSource[] = [
     url: 'https://www.wired.com/feed/rss',
     category: 'tech',
   },
+  {
+    name: 'TechCrunch',
+    url: 'https://techcrunch.com/feed/',
+    category: 'tech',
+  },
+  {
+    name: 'MIT Technology Review',
+    url: 'https://www.technologyreview.com/feed/',
+    category: 'tech',
+  },
 
   // Government / Geopolitical
   {
@@ -61,6 +81,21 @@ export const NEWS_SOURCES: FeedSource[] = [
   {
     name: 'Foreign Affairs',
     url: 'https://www.foreignaffairs.com/rss.xml',
+    category: 'gov',
+  },
+  {
+    name: 'Politico',
+    url: 'https://www.politico.com/rss/politicopicks.xml',
+    category: 'gov',
+  },
+  {
+    name: 'Defense One',
+    url: 'https://www.defenseone.com/rss/all/',
+    category: 'gov',
+  },
+  {
+    name: 'War on the Rocks',
+    url: 'https://warontherocks.com/feed/',
     category: 'gov',
   },
 ];

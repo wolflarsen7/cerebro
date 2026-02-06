@@ -5,11 +5,15 @@ import { ConflictWithNews, SEVERITY_COLORS } from '@/lib/types';
 interface ConflictDetailProps {
   conflict: ConflictWithNews | null;
   onClose: () => void;
+  isWatched?: boolean;
+  onToggleWatch?: () => void;
 }
 
 export default function ConflictDetail({
   conflict,
   onClose,
+  isWatched,
+  onToggleWatch,
 }: ConflictDetailProps) {
   if (!conflict) return null;
 
@@ -40,10 +44,46 @@ export default function ConflictDetail({
               >
                 History &amp; Background
               </a>
+              {onToggleWatch && (
+                <button
+                  onClick={onToggleWatch}
+                  className="rounded px-2 py-0.5 text-[10px] font-medium transition-colors hover:bg-gray-800"
+                  title={isWatched ? 'Unwatch conflict' : 'Watch conflict'}
+                >
+                  <span className={isWatched ? 'text-yellow-400' : 'text-gray-500'}>
+                    {isWatched ? '\u2605' : '\u2606'} {isWatched ? 'Watching' : 'Watch'}
+                  </span>
+                </button>
+              )}
             </div>
             <p className="mb-2 text-xs leading-relaxed text-gray-400 sm:text-sm">
               {conflict.description}
             </p>
+
+            {/* Timeline */}
+            {conflict.timeline && conflict.timeline.length > 0 && (
+              <div className="mb-2">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-gray-600">
+                  Key Events:
+                </span>
+                <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
+                  {conflict.timeline.map((evt, idx) => (
+                    <div key={idx} className="flex items-baseline gap-1.5">
+                      <span className="text-[10px] font-bold text-gray-300">
+                        {evt.year}
+                      </span>
+                      <span className="text-[10px] text-gray-500">
+                        {evt.event}
+                      </span>
+                      {idx < conflict.timeline!.length - 1 && (
+                        <span className="text-[10px] text-gray-700">|</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-1">
                 <span className="text-[10px] font-medium uppercase tracking-wider text-gray-600">

@@ -11,7 +11,15 @@
     "keywords": ["ukraine", "russia", "kyiv", "moscow", "donbas", "crimea", "zelensky", "putin", "kherson", "bakhmut", "zaporizhzhia"],
     "region": "Eastern Europe",
     "startYear": 2022,
-    "historyUrl": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine"
+    "historyUrl": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+    "timeline": [
+      { "year": 2014, "event": "Russia annexes Crimea; war begins in Donbas" },
+      { "year": 2015, "event": "Minsk II ceasefire agreement signed" },
+      { "year": 2022, "event": "Full-scale Russian invasion launched Feb 24" },
+      { "year": 2022, "event": "Ukraine recaptures Kherson in major counter-offensive" },
+      { "year": 2023, "event": "Battle of Bakhmut; Wagner mutiny" },
+      { "year": 2024, "event": "Ukraine strikes deep into Russian territory" }
+    ]
   },
   {
     "id": "israel-palestine",
@@ -25,7 +33,15 @@
     "keywords": ["israel", "palestine", "gaza", "hamas", "west bank", "netanyahu", "idf", "rafah", "hezbollah", "hostage"],
     "region": "Middle East",
     "startYear": 1948,
-    "historyUrl": "https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict",
+    "timeline": [
+      { "year": 1948, "event": "Israeli independence; first Arab-Israeli war" },
+      { "year": 1967, "event": "Six-Day War; Israel occupies Gaza and West Bank" },
+      { "year": 1993, "event": "Oslo Accords signed" },
+      { "year": 2005, "event": "Israel withdraws from Gaza; Hamas wins elections" },
+      { "year": 2023, "event": "Hamas Oct 7 attack; Israel launches Gaza offensive" },
+      { "year": 2024, "event": "ICJ genocide case filed; Rafah operation begins" }
+    ]
   },
   {
     "id": "sudan-civil-war",
@@ -39,7 +55,14 @@
     "keywords": ["sudan", "khartoum", "darfur", "rsf", "hemeti", "burhan", "sudanese"],
     "region": "East Africa",
     "startYear": 2023,
-    "historyUrl": "https://en.wikipedia.org/wiki/War_in_Sudan_(2023%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/War_in_Sudan_(2023%E2%80%93present)",
+    "timeline": [
+      { "year": 2003, "event": "Darfur genocide begins under al-Bashir" },
+      { "year": 2019, "event": "Popular revolution ousts al-Bashir" },
+      { "year": 2021, "event": "Military coup dissolves transitional government" },
+      { "year": 2023, "event": "SAF-RSF war erupts in Khartoum" },
+      { "year": 2024, "event": "RSF accused of ethnic cleansing in Darfur" }
+    ]
   },
   {
     "id": "myanmar-civil-war",
@@ -53,7 +76,14 @@
     "keywords": ["myanmar", "burma", "junta", "tatmadaw", "rohingya", "shan", "karen", "rakhine"],
     "region": "Southeast Asia",
     "startYear": 2021,
-    "historyUrl": "https://en.wikipedia.org/wiki/Myanmar_civil_war_(2021%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/Myanmar_civil_war_(2021%E2%80%93present)",
+    "timeline": [
+      { "year": 1962, "event": "Military seizes power for the first time" },
+      { "year": 2017, "event": "Rohingya genocide; mass displacement" },
+      { "year": 2021, "event": "Military coup ousts Aung San Suu Kyi" },
+      { "year": 2023, "event": "Operation 1027: resistance forces capture key towns" },
+      { "year": 2024, "event": "Junta loses control of large border territories" }
+    ]
   },
   {
     "id": "syria",
@@ -67,7 +97,14 @@
     "keywords": ["syria", "assad", "damascus", "idlib", "aleppo", "hts", "sdf", "kurdish"],
     "region": "Middle East",
     "startYear": 2011,
-    "historyUrl": "https://en.wikipedia.org/wiki/Syrian_civil_war"
+    "historyUrl": "https://en.wikipedia.org/wiki/Syrian_civil_war",
+    "timeline": [
+      { "year": 2011, "event": "Arab Spring protests; civil war begins" },
+      { "year": 2014, "event": "ISIS declares caliphate across Syria and Iraq" },
+      { "year": 2015, "event": "Russia intervenes militarily to support Assad" },
+      { "year": 2019, "event": "Turkey invades northeast Syria" },
+      { "year": 2024, "event": "HTS advances; Assad regime weakens" }
+    ]
   },
   {
     "id": "yemen",
@@ -81,7 +118,14 @@
     "keywords": ["yemen", "houthi", "sanaa", "red sea", "aden", "saudi", "ansar allah"],
     "region": "Middle East",
     "startYear": 2014,
-    "historyUrl": "https://en.wikipedia.org/wiki/Yemeni_civil_war_(2014%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/Yemeni_civil_war_(2014%E2%80%93present)",
+    "timeline": [
+      { "year": 2011, "event": "Arab Spring topples President Saleh" },
+      { "year": 2014, "event": "Houthis seize capital Sanaa" },
+      { "year": 2015, "event": "Saudi-led coalition begins airstrikes" },
+      { "year": 2022, "event": "UN-brokered truce temporarily holds" },
+      { "year": 2024, "event": "Houthis attack Red Sea shipping; US/UK strikes back" }
+    ]
   },
   {
     "id": "ethiopia-tigray",
@@ -95,7 +139,14 @@
     "keywords": ["ethiopia", "tigray", "amhara", "oromia", "addis ababa", "fano", "abiy"],
     "region": "East Africa",
     "startYear": 2020,
-    "historyUrl": "https://en.wikipedia.org/wiki/Tigray_War"
+    "historyUrl": "https://en.wikipedia.org/wiki/Tigray_War",
+    "timeline": [
+      { "year": 2018, "event": "Abiy Ahmed becomes PM; Nobel Peace Prize in 2019" },
+      { "year": 2020, "event": "Tigray War erupts between federal forces and TPLF" },
+      { "year": 2022, "event": "Pretoria ceasefire agreement signed" },
+      { "year": 2023, "event": "Amhara Fano militia insurgency escalates" },
+      { "year": 2024, "event": "Ongoing ethnic violence in multiple regions" }
+    ]
   },
   {
     "id": "drc-east",
@@ -109,7 +160,14 @@
     "keywords": ["congo", "drc", "m23", "goma", "rwanda", "kivu", "tshisekedi"],
     "region": "Central Africa",
     "startYear": 2022,
-    "historyUrl": "https://en.wikipedia.org/wiki/M23_offensive_(2022%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/M23_offensive_(2022%E2%80%93present)",
+    "timeline": [
+      { "year": 1998, "event": "Second Congo War begins — \"Africa's World War\"" },
+      { "year": 2012, "event": "M23 briefly captures Goma" },
+      { "year": 2013, "event": "M23 defeated; rebels disband" },
+      { "year": 2022, "event": "M23 resurges with Rwandan backing" },
+      { "year": 2025, "event": "M23 captures Goma; regional crisis intensifies" }
+    ]
   },
   {
     "id": "somalia",
@@ -123,7 +181,14 @@
     "keywords": ["somalia", "mogadishu", "al-shabaab", "shabaab", "somali"],
     "region": "East Africa",
     "startYear": 2006,
-    "historyUrl": "https://en.wikipedia.org/wiki/Somali_civil_war"
+    "historyUrl": "https://en.wikipedia.org/wiki/Somali_civil_war",
+    "timeline": [
+      { "year": 1991, "event": "Somali state collapses; civil war begins" },
+      { "year": 2006, "event": "Al-Shabaab emerges as insurgent force" },
+      { "year": 2011, "event": "AMISOM drives al-Shabaab from Mogadishu" },
+      { "year": 2017, "event": "Deadliest truck bombing in Mogadishu kills 600+" },
+      { "year": 2023, "event": "Major government offensive against al-Shabaab" }
+    ]
   },
   {
     "id": "sahel-jihadism",
@@ -137,7 +202,14 @@
     "keywords": ["sahel", "mali", "burkina faso", "niger", "jnim", "wagner", "bamako", "ouagadougou"],
     "region": "West Africa",
     "startYear": 2012,
-    "historyUrl": "https://en.wikipedia.org/wiki/Islamist_insurgency_in_the_Sahel"
+    "historyUrl": "https://en.wikipedia.org/wiki/Islamist_insurgency_in_the_Sahel",
+    "timeline": [
+      { "year": 2012, "event": "Tuareg rebellion and Islamist takeover of northern Mali" },
+      { "year": 2013, "event": "French Operation Serval intervenes" },
+      { "year": 2021, "event": "Mali military coup; France begins withdrawal" },
+      { "year": 2023, "event": "Niger coup; Wagner replaces French forces" },
+      { "year": 2024, "event": "Sahel states form Alliance of Sahel States" }
+    ]
   },
   {
     "id": "haiti",
@@ -151,7 +223,13 @@
     "keywords": ["haiti", "port-au-prince", "haitian", "gang"],
     "region": "Caribbean",
     "startYear": 2021,
-    "historyUrl": "https://en.wikipedia.org/wiki/Crisis_in_Haiti"
+    "historyUrl": "https://en.wikipedia.org/wiki/Crisis_in_Haiti",
+    "timeline": [
+      { "year": 2010, "event": "Devastating earthquake kills 200,000+" },
+      { "year": 2021, "event": "President Moïse assassinated" },
+      { "year": 2023, "event": "Gangs control 80% of Port-au-Prince" },
+      { "year": 2024, "event": "Kenya-led multinational security force deploys" }
+    ]
   },
   {
     "id": "taiwan-strait",
@@ -165,7 +243,13 @@
     "keywords": ["taiwan", "taipei", "china", "pla", "strait", "tsai", "lai"],
     "region": "East Asia",
     "startYear": 1949,
-    "historyUrl": "https://en.wikipedia.org/wiki/Cross-Strait_relations"
+    "historyUrl": "https://en.wikipedia.org/wiki/Cross-Strait_relations",
+    "timeline": [
+      { "year": 1949, "event": "ROC government retreats to Taiwan" },
+      { "year": 1996, "event": "Third Taiwan Strait Crisis; US carrier deployment" },
+      { "year": 2022, "event": "Pelosi visit triggers massive PLA exercises" },
+      { "year": 2024, "event": "Lai Ching-te inaugurated; China conducts drills" }
+    ]
   },
   {
     "id": "south-china-sea",
@@ -179,7 +263,13 @@
     "keywords": ["south china sea", "spratlys", "scarborough", "manila", "philippines", "nine-dash"],
     "region": "Southeast Asia",
     "startYear": 2012,
-    "historyUrl": "https://en.wikipedia.org/wiki/Territorial_disputes_in_the_South_China_Sea"
+    "historyUrl": "https://en.wikipedia.org/wiki/Territorial_disputes_in_the_South_China_Sea",
+    "timeline": [
+      { "year": 2012, "event": "Scarborough Shoal standoff between China and Philippines" },
+      { "year": 2016, "event": "Hague tribunal rules against China's nine-dash line" },
+      { "year": 2023, "event": "China-Philippines clashes at Second Thomas Shoal" },
+      { "year": 2024, "event": "Water cannon and ramming incidents escalate" }
+    ]
   },
   {
     "id": "north-korea",
@@ -193,7 +283,14 @@
     "keywords": ["north korea", "pyongyang", "kim jong un", "dprk", "korean peninsula", "missile"],
     "region": "East Asia",
     "startYear": 1950,
-    "historyUrl": "https://en.wikipedia.org/wiki/North_Korea%E2%80%93South_Korea_relations"
+    "historyUrl": "https://en.wikipedia.org/wiki/North_Korea%E2%80%93South_Korea_relations",
+    "timeline": [
+      { "year": 1950, "event": "Korean War begins" },
+      { "year": 1953, "event": "Armistice signed; peninsula remains divided" },
+      { "year": 2006, "event": "North Korea conducts first nuclear test" },
+      { "year": 2017, "event": "ICBM tests; \"fire and fury\" crisis" },
+      { "year": 2024, "event": "DPRK troops reportedly deploy to Russia" }
+    ]
   },
   {
     "id": "iran-israel",
@@ -207,7 +304,14 @@
     "keywords": ["iran", "tehran", "irgc", "nuclear", "proxy", "axis of resistance"],
     "region": "Middle East",
     "startYear": 1979,
-    "historyUrl": "https://en.wikipedia.org/wiki/Iran%E2%80%93Israel_proxy_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Iran%E2%80%93Israel_proxy_conflict",
+    "timeline": [
+      { "year": 1979, "event": "Iranian Revolution; relations severed" },
+      { "year": 2010, "event": "Stuxnet cyber-attack on Iran's nuclear program" },
+      { "year": 2020, "event": "US kills IRGC commander Soleimani" },
+      { "year": 2024, "event": "Iran launches direct missile attack on Israel" },
+      { "year": 2024, "event": "Israel strikes Iranian air defenses in response" }
+    ]
   },
   {
     "id": "afghanistan",
@@ -221,7 +325,14 @@
     "keywords": ["afghanistan", "taliban", "kabul", "isis-k", "khorasan", "afghan"],
     "region": "South Asia",
     "startYear": 2021,
-    "historyUrl": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001%E2%80%932021)"
+    "historyUrl": "https://en.wikipedia.org/wiki/War_in_Afghanistan_(2001%E2%80%932021)",
+    "timeline": [
+      { "year": 2001, "event": "US invasion topples Taliban after 9/11" },
+      { "year": 2011, "event": "Osama bin Laden killed in Pakistan" },
+      { "year": 2020, "event": "US-Taliban Doha Agreement signed" },
+      { "year": 2021, "event": "US withdrawal; Taliban retakes Kabul" },
+      { "year": 2023, "event": "Taliban bans women from education and work" }
+    ]
   },
   {
     "id": "pakistan-instability",
@@ -235,7 +346,14 @@
     "keywords": ["pakistan", "islamabad", "ttp", "balochistan", "imran khan", "pakistani"],
     "region": "South Asia",
     "startYear": 2007,
-    "historyUrl": "https://en.wikipedia.org/wiki/Insurgency_in_Khyber_Pakhtunkhwa"
+    "historyUrl": "https://en.wikipedia.org/wiki/Insurgency_in_Khyber_Pakhtunkhwa",
+    "timeline": [
+      { "year": 2007, "event": "TTP formed; Benazir Bhutto assassinated" },
+      { "year": 2014, "event": "Army launches Operation Zarb-e-Azb in Waziristan" },
+      { "year": 2022, "event": "Imran Khan ousted; political crisis deepens" },
+      { "year": 2023, "event": "TTP attacks surge after Afghan Taliban takeover" },
+      { "year": 2024, "event": "Balochistan separatist attacks intensify" }
+    ]
   },
   {
     "id": "nagorno-karabakh",
@@ -249,7 +367,14 @@
     "keywords": ["armenia", "azerbaijan", "karabakh", "baku", "yerevan", "aliyev", "pashinyan"],
     "region": "Caucasus",
     "startYear": 2020,
-    "historyUrl": "https://en.wikipedia.org/wiki/Nagorno-Karabakh_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Nagorno-Karabakh_conflict",
+    "timeline": [
+      { "year": 1988, "event": "Karabakh conflict begins as USSR collapses" },
+      { "year": 1994, "event": "Ceasefire; Armenian forces control Karabakh" },
+      { "year": 2020, "event": "44-day war; Azerbaijan recaptures most territory" },
+      { "year": 2023, "event": "Azerbaijan seizes Karabakh; Armenian exodus" },
+      { "year": 2024, "event": "Peace treaty negotiations between Armenia and Azerbaijan" }
+    ]
   },
   {
     "id": "lebanon",
@@ -263,7 +388,14 @@
     "keywords": ["lebanon", "beirut", "hezbollah", "lebanese", "nasrallah"],
     "region": "Middle East",
     "startYear": 2023,
-    "historyUrl": "https://en.wikipedia.org/wiki/Israeli%E2%80%93Lebanese_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Israeli%E2%80%93Lebanese_conflict",
+    "timeline": [
+      { "year": 2006, "event": "Israel-Hezbollah war; UN Resolution 1701" },
+      { "year": 2019, "event": "Economic collapse and mass protests" },
+      { "year": 2020, "event": "Beirut port explosion devastates capital" },
+      { "year": 2023, "event": "Cross-border escalation after Oct 7" },
+      { "year": 2024, "event": "Israel strikes Hezbollah leadership; ground incursion" }
+    ]
   },
   {
     "id": "libya",
@@ -277,7 +409,14 @@
     "keywords": ["libya", "tripoli", "benghazi", "haftar", "libyan"],
     "region": "North Africa",
     "startYear": 2014,
-    "historyUrl": "https://en.wikipedia.org/wiki/Libyan_crisis_(2011%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/Libyan_crisis_(2011%E2%80%93present)",
+    "timeline": [
+      { "year": 2011, "event": "NATO-backed uprising topples Gaddafi" },
+      { "year": 2014, "event": "Country splits between rival governments" },
+      { "year": 2019, "event": "Haftar's offensive on Tripoli fails" },
+      { "year": 2020, "event": "Ceasefire agreement; unity government formed" },
+      { "year": 2024, "event": "Elections still postponed; oil disputes continue" }
+    ]
   },
   {
     "id": "iraq",
@@ -291,7 +430,14 @@
     "keywords": ["iraq", "baghdad", "militia", "pmu", "iraqi", "isis"],
     "region": "Middle East",
     "startYear": 2014,
-    "historyUrl": "https://en.wikipedia.org/wiki/Iraqi_conflict_(2003%E2%80%93present)"
+    "historyUrl": "https://en.wikipedia.org/wiki/Iraqi_conflict_(2003%E2%80%93present)",
+    "timeline": [
+      { "year": 2003, "event": "US-led invasion topples Saddam Hussein" },
+      { "year": 2014, "event": "ISIS captures Mosul; caliphate declared" },
+      { "year": 2017, "event": "Iraqi forces recapture Mosul from ISIS" },
+      { "year": 2020, "event": "US kills Soleimani in Baghdad airstrike" },
+      { "year": 2024, "event": "Iran-backed militias attack US bases" }
+    ]
   },
   {
     "id": "colombia",
@@ -305,7 +451,14 @@
     "keywords": ["colombia", "bogota", "eln", "farc", "colombian", "petro"],
     "region": "South America",
     "startYear": 1964,
-    "historyUrl": "https://en.wikipedia.org/wiki/Colombian_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Colombian_conflict",
+    "timeline": [
+      { "year": 1964, "event": "FARC guerrilla movement founded" },
+      { "year": 2002, "event": "Plan Colombia; major US military aid" },
+      { "year": 2016, "event": "Historic FARC peace agreement signed" },
+      { "year": 2022, "event": "Gustavo Petro elected; \"Total Peace\" policy" },
+      { "year": 2024, "event": "ELN peace talks stall; FARC dissidents active" }
+    ]
   },
   {
     "id": "mexico-drug-war",
@@ -319,7 +472,14 @@
     "keywords": ["mexico", "cartel", "sinaloa", "cjng", "fentanyl", "mexican"],
     "region": "North America",
     "startYear": 2006,
-    "historyUrl": "https://en.wikipedia.org/wiki/Mexican_drug_war"
+    "historyUrl": "https://en.wikipedia.org/wiki/Mexican_drug_war",
+    "timeline": [
+      { "year": 2006, "event": "President Calderón declares war on cartels" },
+      { "year": 2014, "event": "43 students kidnapped in Ayotzinapa" },
+      { "year": 2019, "event": "El Chapo convicted in US court" },
+      { "year": 2023, "event": "Sinaloa Cartel fragments after arrests" },
+      { "year": 2024, "event": "Fentanyl crisis drives record US-Mexico tensions" }
+    ]
   },
   {
     "id": "mozambique",
@@ -333,7 +493,13 @@
     "keywords": ["mozambique", "cabo delgado", "maputo", "mozambican"],
     "region": "Southern Africa",
     "startYear": 2017,
-    "historyUrl": "https://en.wikipedia.org/wiki/Insurgency_in_Cabo_Delgado"
+    "historyUrl": "https://en.wikipedia.org/wiki/Insurgency_in_Cabo_Delgado",
+    "timeline": [
+      { "year": 2017, "event": "Islamist insurgency begins in Cabo Delgado" },
+      { "year": 2021, "event": "Militants seize Palma; Rwanda deploys troops" },
+      { "year": 2022, "event": "SADC forces help recapture key towns" },
+      { "year": 2024, "event": "Disputed elections trigger political crisis" }
+    ]
   },
   {
     "id": "india-kashmir",
@@ -347,7 +513,14 @@
     "keywords": ["kashmir", "india", "jammu", "naxal", "maoist", "modi"],
     "region": "South Asia",
     "startYear": 1947,
-    "historyUrl": "https://en.wikipedia.org/wiki/Kashmir_conflict"
+    "historyUrl": "https://en.wikipedia.org/wiki/Kashmir_conflict",
+    "timeline": [
+      { "year": 1947, "event": "Partition of India; first Kashmir war" },
+      { "year": 1999, "event": "Kargil War between India and Pakistan" },
+      { "year": 2016, "event": "Uri attack; India conducts surgical strikes" },
+      { "year": 2019, "event": "India revokes Kashmir's special autonomy (Article 370)" },
+      { "year": 2024, "event": "First Kashmir elections since autonomy revoked" }
+    ]
   },
   {
     "id": "cameroon-anglophone",
@@ -361,7 +534,13 @@
     "keywords": ["cameroon", "anglophone", "ambazonia", "cameroon crisis"],
     "region": "Central Africa",
     "startYear": 2017,
-    "historyUrl": "https://en.wikipedia.org/wiki/Anglophone_Crisis"
+    "historyUrl": "https://en.wikipedia.org/wiki/Anglophone_Crisis",
+    "timeline": [
+      { "year": 2016, "event": "Lawyers and teachers strike over Francophone dominance" },
+      { "year": 2017, "event": "Ambazonia declares independence; armed conflict begins" },
+      { "year": 2019, "event": "Ambazonian leaders arrested and sentenced" },
+      { "year": 2023, "event": "Conflict entrenched; education crisis in NW/SW regions" }
+    ]
   },
   {
     "id": "venezuela",
@@ -375,7 +554,13 @@
     "keywords": ["venezuela", "maduro", "caracas", "venezuelan", "machado"],
     "region": "South America",
     "startYear": 2019,
-    "historyUrl": "https://en.wikipedia.org/wiki/Crisis_in_Venezuela"
+    "historyUrl": "https://en.wikipedia.org/wiki/Crisis_in_Venezuela",
+    "timeline": [
+      { "year": 2013, "event": "Maduro succeeds Chávez; economic decline begins" },
+      { "year": 2019, "event": "Guaidó declares interim presidency; dual government crisis" },
+      { "year": 2023, "event": "Barbados Agreement; opposition candidate barred" },
+      { "year": 2024, "event": "Disputed elections; Maduro claims victory amid protests" }
+    ]
   },
   {
     "id": "nigeria",
@@ -389,6 +574,13 @@
     "keywords": ["nigeria", "boko haram", "iswap", "abuja", "lagos", "nigerian", "bandit"],
     "region": "West Africa",
     "startYear": 2009,
-    "historyUrl": "https://en.wikipedia.org/wiki/Boko_Haram_insurgency"
+    "historyUrl": "https://en.wikipedia.org/wiki/Boko_Haram_insurgency",
+    "timeline": [
+      { "year": 2009, "event": "Boko Haram insurgency begins in northeast" },
+      { "year": 2014, "event": "276 schoolgirls kidnapped in Chibok" },
+      { "year": 2016, "event": "ISWAP splits from Boko Haram" },
+      { "year": 2021, "event": "Banditry surges in northwest; mass kidnappings" },
+      { "year": 2024, "event": "Multi-front violence continues; economic crisis" }
+    ]
   }
 ]

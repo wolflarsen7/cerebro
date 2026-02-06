@@ -6,7 +6,6 @@ import {
   getConflictsWithNews,
 } from '@/lib/conflicts';
 import { fetchPolymarketEvents } from '@/lib/polymarket';
-import Header from '@/components/Header';
 import Dashboard from '@/components/Dashboard';
 
 // ISR: revalidate every hour
@@ -51,7 +50,6 @@ export default async function Home() {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden">
-      <Header lastUpdated={lastUpdated} />
       <Dashboard
         conflicts={conflictsWithNews}
         intelArticles={matchedIntelArticles}
@@ -59,6 +57,7 @@ export default async function Home() {
         techArticles={techArticles}
         govArticles={govArticles}
         polymarketEvents={polymarketEvents}
+        lastUpdated={lastUpdated}
       />
     </div>
   );
