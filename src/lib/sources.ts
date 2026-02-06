@@ -49,13 +49,18 @@ export const NEWS_SOURCES: FeedSource[] = [
 
   // Government / Geopolitical
   {
-    name: 'UN News',
-    url: 'https://news.un.org/feed/subscribe/en/news/all/rss.xml',
+    name: 'UN Peace & Security',
+    url: 'https://news.un.org/feed/subscribe/en/news/topic/peace-and-security/feed/rss.xml',
     category: 'gov',
   },
   {
-    name: 'CFR',
-    url: 'https://www.cfr.org/rss.xml',
+    name: 'Defense.gov',
+    url: 'https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=945',
+    category: 'gov',
+  },
+  {
+    name: 'Foreign Affairs',
+    url: 'https://www.foreignaffairs.com/rss.xml',
     category: 'gov',
   },
 ];
