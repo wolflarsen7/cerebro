@@ -162,6 +162,7 @@ export default function Dashboard({
               techArticles={techArticles}
               govArticles={govArticles}
               polymarketEvents={polymarketEvents}
+              controlledTab={mobileTab !== 'map' ? mobileTab as 'intel' | 'finance' | 'tech' | 'gov' | 'polymarket' : undefined}
             />
           </MobileDrawer>
           <MobileNav

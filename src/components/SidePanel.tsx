@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NewsArticle, PolymarketEvent } from '@/lib/types';
 import NewsFeed from './NewsFeed';
 import FinancePanel from './FinancePanel';
@@ -37,9 +37,19 @@ export default function SidePanel({
   controlledTab,
   onTabChange,
 }: SidePanelProps) {
-  const [internalTab, setInternalTab] = useState<Tab>('intel');
-  const activeTab = controlledTab ?? internalTab;
-  const setActiveTab = onTabChange ?? setInternalTab;
+  const [activeTab, setActiveTab] = useState<Tab>(controlledTab ?? 'intel');
+
+  // Sync internal tab when parent requests a specific tab
+  useEffect(() => {
+    if (controlledTab) {
+      setActiveTab(controlledTab);
+    }
+  }, [controlledTab]);
+
+  const handleTabChange = (tab: Tab) => {
+    setActiveTab(tab);
+    onTabChange?.(tab);
+  };
 
   return (
     <div className="flex h-full flex-col">
@@ -48,7 +58,7 @@ export default function SidePanel({
         {TABS.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabChange(tab.id)}
             className={`flex-1 px-2 py-2.5 text-[11px] font-medium uppercase tracking-wider transition-colors sm:text-xs ${
               activeTab === tab.id
                 ? 'border-b-2 border-red-500 text-gray-200'
