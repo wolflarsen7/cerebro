@@ -37,12 +37,6 @@ interface DashboardProps {
 
 const ALL_SEVERITIES = new Set<Severity>(['critical', 'high', 'medium', 'low']);
 
-// Map MobileTab to SidePanel tab
-const MOBILE_TO_SIDE: Record<string, string> = {
-  intel: 'intel',
-  finance: 'finance',
-  polymarket: 'polymarket',
-};
 
 export default function Dashboard({
   conflicts,
@@ -115,16 +109,6 @@ export default function Dashboard({
     }
   };
 
-  const handleMobileConflictSelect = (conflict: ConflictWithNews | null) => {
-    setSelectedConflict(conflict);
-    if (conflict && drawerPosition !== 'closed') {
-      setDrawerPosition('closed');
-    }
-  };
-
-  // Map MobileTab to SidePanel tab type
-  const sidePanelTab = (MOBILE_TO_SIDE[mobileTab] ?? 'intel') as 'intel' | 'finance' | 'tech' | 'gov' | 'polymarket';
-
   return (
     <>
       <Header
@@ -178,13 +162,6 @@ export default function Dashboard({
               techArticles={techArticles}
               govArticles={govArticles}
               polymarketEvents={polymarketEvents}
-              controlledTab={sidePanelTab}
-              onTabChange={(tab) => {
-                const mapped = tab as MobileTab;
-                if (mapped === 'intel' || mapped === 'finance' || mapped === 'polymarket') {
-                  setMobileTab(mapped);
-                }
-              }}
             />
           </MobileDrawer>
           <MobileNav
