@@ -104,7 +104,9 @@ export default function MobileDrawer({
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className="fixed inset-x-0 bottom-14 top-0 z-[950] flex flex-col rounded-t-2xl bg-gray-950 shadow-2xl transition-transform duration-300 ease-out md:hidden"
+        className={`fixed inset-x-0 bottom-14 top-0 z-[950] flex flex-col rounded-t-2xl bg-gray-950 shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+          position === 'closed' ? 'pointer-events-none' : ''
+        }`}
         style={{ transform: TRANSLATE[position] }}
       >
         {/* Drag handle */}

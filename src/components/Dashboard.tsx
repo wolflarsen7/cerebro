@@ -105,7 +105,7 @@ export default function Dashboard({
     if (tab === 'map') {
       setDrawerPosition('closed');
     } else {
-      setDrawerPosition(drawerPosition === 'closed' ? 'half' : drawerPosition);
+      setDrawerPosition((prev) => (prev === 'closed' ? 'half' : prev));
     }
   };
 
