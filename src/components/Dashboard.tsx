@@ -1,15 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { ConflictWithNews, NewsArticle, PolymarketEvent } from '@/lib/types';
+import { ConflictWithNews, NewsArticle, PolymarketEvent, ConflictFilters, Severity } from '@/lib/types';
 import { useTheme } from '@/lib/useTheme';
 import { useWatchlist } from '@/lib/useWatchlist';
 import { useWatchlistNotifications } from '@/lib/useNotifications';
+import { useAutoRefresh } from '@/lib/useAutoRefresh';
 import Header from './Header';
 import SidePanel from './SidePanel';
 import ConflictDetail from './ConflictDetail';
 import MapLegend from './MapLegend';
+import ConflictFilter from './ConflictFilter';
+import MobileDrawer, { type DrawerPosition } from './MobileDrawer';
+import MobileNav, { type MobileTab } from './MobileNav';
 
 // Leaflet must be client-only (no SSR)
 const ConflictMap = dynamic(() => import('./ConflictMap'), {
@@ -31,22 +35,95 @@ interface DashboardProps {
   lastUpdated: string;
 }
 
+const ALL_SEVERITIES = new Set<Severity>(['critical', 'high', 'medium', 'low']);
+
+// Map MobileTab to SidePanel tab
+const MOBILE_TO_SIDE: Record<string, string> = {
+  intel: 'intel',
+  finance: 'finance',
+  polymarket: 'polymarket',
+};
+
 export default function Dashboard({
   conflicts,
-  intelArticles,
-  financeArticles,
-  techArticles,
-  govArticles,
-  polymarketEvents,
-  lastUpdated,
+  intelArticles: ssrIntel,
+  financeArticles: ssrFinance,
+  techArticles: ssrTech,
+  govArticles: ssrGov,
+  polymarketEvents: ssrPoly,
+  lastUpdated: ssrLastUpdated,
 }: DashboardProps) {
+  // --- Auto-refresh ---
+  const {
+    intelArticles,
+    financeArticles,
+    techArticles,
+    govArticles,
+    polymarketEvents,
+    conflictsWithNews: liveConflicts,
+    lastUpdated,
+    isRefreshing,
+    refresh,
+  } = useAutoRefresh({
+    intelArticles: ssrIntel,
+    financeArticles: ssrFinance,
+    techArticles: ssrTech,
+    govArticles: ssrGov,
+    polymarketEvents: ssrPoly,
+    conflictsWithNews: conflicts,
+    lastUpdated: ssrLastUpdated,
+  });
+
+  // --- Conflict selection ---
   const [selectedConflict, setSelectedConflict] =
     useState<ConflictWithNews | null>(null);
 
+  // --- Theme & watchlist ---
   const { theme, toggleTheme } = useTheme();
   const { watched, toggleWatch, isWatched } = useWatchlist();
-
   useWatchlistNotifications(watched, intelArticles);
+
+  // --- Conflict filters ---
+  const [filters, setFilters] = useState<ConflictFilters>({
+    severities: new Set<Severity>(ALL_SEVERITIES),
+    region: '',
+    type: '',
+    search: '',
+  });
+
+  const filteredConflicts = useMemo(() => {
+    return liveConflicts.filter((c) => {
+      if (!filters.severities.has(c.severity)) return false;
+      if (filters.region && c.region !== filters.region) return false;
+      if (filters.type && c.type !== filters.type) return false;
+      if (filters.search && !c.name.toLowerCase().includes(filters.search.toLowerCase()))
+        return false;
+      return true;
+    });
+  }, [liveConflicts, filters]);
+
+  // --- Mobile drawer state ---
+  const [drawerPosition, setDrawerPosition] = useState<DrawerPosition>('closed');
+  const [mobileTab, setMobileTab] = useState<MobileTab>('map');
+
+  const handleMobileTabChange = (tab: MobileTab) => {
+    setMobileTab(tab);
+    if (tab === 'map') {
+      setDrawerPosition('closed');
+    } else {
+      setDrawerPosition(drawerPosition === 'closed' ? 'half' : drawerPosition);
+    }
+  };
+
+  const handleMobileConflictSelect = (conflict: ConflictWithNews | null) => {
+    setSelectedConflict(conflict);
+    if (conflict && drawerPosition !== 'closed') {
+      setDrawerPosition('closed');
+    }
+  };
+
+  // Map MobileTab to SidePanel tab type
+  const sidePanelTab = (MOBILE_TO_SIDE[mobileTab] ?? 'intel') as 'intel' | 'finance' | 'tech' | 'gov' | 'polymarket';
 
   return (
     <>
@@ -54,6 +131,8 @@ export default function Dashboard({
         lastUpdated={lastUpdated}
         theme={theme}
         onToggleTheme={toggleTheme}
+        onRefresh={refresh}
+        isRefreshing={isRefreshing}
       />
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* Main content area */}
@@ -61,15 +140,21 @@ export default function Dashboard({
           {/* Map area */}
           <div className="relative flex-1">
             <ConflictMap
-              conflicts={conflicts}
+              conflicts={filteredConflicts}
               onSelectConflict={setSelectedConflict}
               selectedConflict={selectedConflict}
               theme={theme}
             />
             <MapLegend />
+            <ConflictFilter
+              filters={filters}
+              onFiltersChange={setFilters}
+              conflicts={liveConflicts}
+              filteredCount={filteredConflicts.length}
+            />
           </div>
 
-          {/* Side panel */}
+          {/* Desktop side panel */}
           <div className="hidden w-[380px] flex-shrink-0 border-l border-gray-700/50 bg-gray-950 md:block lg:w-[420px]">
             <SidePanel
               intelArticles={intelArticles}
@@ -81,17 +166,34 @@ export default function Dashboard({
           </div>
         </div>
 
-        {/* Mobile side panel toggle (shows below map on small screens) */}
+        {/* Mobile drawer + nav (replaces old static mobile panel) */}
         <div className="block md:hidden">
-          <div className="h-[45vh] border-t border-gray-700/50 bg-gray-950">
+          <MobileDrawer
+            position={drawerPosition}
+            onPositionChange={setDrawerPosition}
+          >
             <SidePanel
               intelArticles={intelArticles}
               financeArticles={financeArticles}
               techArticles={techArticles}
               govArticles={govArticles}
               polymarketEvents={polymarketEvents}
+              controlledTab={sidePanelTab}
+              onTabChange={(tab) => {
+                const mapped = tab as MobileTab;
+                if (mapped === 'intel' || mapped === 'finance' || mapped === 'polymarket') {
+                  setMobileTab(mapped);
+                }
+              }}
             />
-          </div>
+          </MobileDrawer>
+          <MobileNav
+            activeTab={mobileTab}
+            onTabChange={handleMobileTabChange}
+            drawerOpen={drawerPosition !== 'closed'}
+          />
+          {/* Spacer for fixed bottom nav */}
+          <div className="h-14" />
         </div>
 
         {/* Conflict detail bar */}

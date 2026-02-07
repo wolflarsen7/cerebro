@@ -6,9 +6,17 @@ interface HeaderProps {
   lastUpdated: string;
   theme: Theme;
   onToggleTheme: () => void;
+  onRefresh?: () => void;
+  isRefreshing?: boolean;
 }
 
-export default function Header({ lastUpdated, theme, onToggleTheme }: HeaderProps) {
+export default function Header({
+  lastUpdated,
+  theme,
+  onToggleTheme,
+  onRefresh,
+  isRefreshing = false,
+}: HeaderProps) {
   return (
     <header className="flex items-center justify-between border-b border-gray-700/50 bg-gray-900/80 px-4 py-3 backdrop-blur-sm sm:px-6">
       <div className="flex items-center gap-3">
@@ -52,6 +60,28 @@ export default function Header({ lastUpdated, theme, onToggleTheme }: HeaderProp
             </svg>
           )}
         </button>
+        {onRefresh && (
+          <button
+            onClick={onRefresh}
+            disabled={isRefreshing}
+            className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200 disabled:opacity-50"
+            title="Refresh data"
+          >
+            <svg
+              className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"
+              />
+            </svg>
+          </button>
+        )}
         <div className="flex items-center gap-2 text-xs text-gray-500">
           <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
           <span className="hidden sm:inline">Last updated:</span>

@@ -58,6 +58,13 @@ export interface ConflictWithNews extends Conflict {
   relatedNews: NewsArticle[];
 }
 
+export interface ConflictFilters {
+  severities: Set<Severity>;
+  region: string;
+  type: string;
+  search: string;
+}
+
 export const SEVERITY_COLORS: Record<Severity, string> = {
   critical: '#ef4444',
   high: '#f97316',

@@ -16,6 +16,8 @@ interface SidePanelProps {
   techArticles: NewsArticle[];
   govArticles: NewsArticle[];
   polymarketEvents: PolymarketEvent[];
+  controlledTab?: Tab;
+  onTabChange?: (tab: Tab) => void;
 }
 
 const TABS: { id: Tab; label: string; short: string }[] = [
@@ -32,8 +34,12 @@ export default function SidePanel({
   techArticles,
   govArticles,
   polymarketEvents,
+  controlledTab,
+  onTabChange,
 }: SidePanelProps) {
-  const [activeTab, setActiveTab] = useState<Tab>('intel');
+  const [internalTab, setInternalTab] = useState<Tab>('intel');
+  const activeTab = controlledTab ?? internalTab;
+  const setActiveTab = onTabChange ?? setInternalTab;
 
   return (
     <div className="flex h-full flex-col">

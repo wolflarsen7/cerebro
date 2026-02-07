@@ -282,3 +282,44 @@ html.light ::-webkit-scrollbar-thumb:hover {
 html.light .text-yellow-400 {
   color: #d97706 !important;
 }
+
+/* ========================================
+   Mobile Drawer & Nav
+   ======================================== */
+
+/* Light theme: mobile nav */
+html.light nav.fixed {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+html.light nav.fixed .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+html.light nav.fixed .text-gray-100 {
+  color: #111827 !important;
+}
+
+/* Light theme: mobile drawer */
+html.light .rounded-t-2xl.bg-gray-950 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-black\/40 {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Light theme: conflict filter */
+html.light .bg-gray-900\/95 {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+}
+
+html.light select.bg-gray-800 {
+  background-color: #f3f4f6 !important;
+  color: #1f2937 !important;
+}
+
+html.light input.bg-transparent::placeholder {
+  color: #9ca3af !important;
+}
